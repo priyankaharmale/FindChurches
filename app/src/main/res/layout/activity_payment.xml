@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite1">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorBlack">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/logo"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/logo" />
+
+                <ImageView
+                    android:id="@+id/name"
+                    android:layout_width="200dp"
+                    android:layout_height="@dimen/dimens_30dp"
+                    android:layout_margin="@dimen/dimens_10dp"
+                    android:layout_toRightOf="@+id/logo"
+                    android:src="@drawable/logo_name" />
+            </RelativeLayout>
+        </Toolbar>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/dimens_10dp"
+                android:layout_marginRight="@dimen/dimens_10dp"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:id="@+id/tv_eventname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/dimens_10dp"
+                    android:layout_marginBottom="@dimen/dimens_10dp"
+                    android:text="@string/txt_apyment"
+                    android:textColor="@color/color_calender_bg"
+                    android:textSize="@dimen/text_20"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1.5dp"
+                    android:layout_marginLeft="@dimen/dimens_10dp"
+                    android:layout_marginRight="@dimen/dimens_10dp"
+                    android:background="@color/color_product_name"></View>
+
+
+                <!--
+                GridView with 3 value for numColumns attribute
+                -->
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_margin="@dimen/dimens_10dp"
+                        android:layout_marginRight="@dimen/dimens_10dp"
+                        android:src="@drawable/payment_total" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/dimens_10dp"
+
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_paymnettoatl"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="$250"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/text_20" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Total"
+
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/text_size_12sp" />
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/iv_cancle"
+                        android:layout_width="@dimen/dimens_20dp"
+                        android:layout_height="@dimen/dimens_20dp"
+                        android:layout_marginLeft="@dimen/dimens_150dp"
+                        android:layout_marginTop="@dimen/dimens_20dp"
+                        android:src="@drawable/cancel_button" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1.5dp"
+                    android:layout_marginLeft="@dimen/dimens_10dp"
+                    android:layout_marginRight="@dimen/dimens_10dp"
+                    android:background="@color/color_product_name"></View>
+
+                <LinearLayout
+                    android:id="@+id/ll_addDonation"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/dimens_10dp">
+
+                    <ImageView
+                        android:layout_width="@dimen/dimens_20dp"
+                        android:layout_height="@dimen/dimens_20dp"
+                        android:src="@drawable/plus_symbol" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dimens_5dp"
+                        android:text="@string/txt_adddona"
+                        android:textSize="@dimen/text_size_14dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/dimens_10dp"
+                    android:layout_marginTop="@dimen/dimens_10dp">
+
+                    <ImageView
+                        android:layout_width="@dimen/dimens_20dp"
+                        android:layout_height="@dimen/dimens_20dp"
+                        android:src="@drawable/icon_auto" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dimens_5dp"
+                        android:text="@string/txt_setrec"
+                        android:textColor="@color/color_calender_bg"
+
+                        android:textSize="@dimen/text_size_14dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/text_20"
+                    android:layout_marginTop="@dimen/dimens_10dp"
+                    android:orientation="vertical">
+
+                    <CheckBox
+                        android:id="@+id/check_never"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/txt_never"
+                        android:onClick="onCheckboxClicked"
+
+                        android:textSize="@dimen/text_size_18dp" />
+
+                    <CheckBox
+                        android:id="@+id/check_daily"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dimens_10dp"
+                        android:text="@string/txt_daily"
+                        android:onClick="onCheckboxClicked"
+
+                        android:textSize="@dimen/text_size_18dp" />
+
+                    <CheckBox
+                        android:id="@+id/check_weekly"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dimens_10dp"
+                        android:text="@string/txt_week"
+                        android:onClick="onCheckboxClicked"
+
+                        android:textSize="@dimen/text_size_18dp" />
+
+                    <CheckBox
+                        android:id="@+id/check_biweekly"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dimens_10dp"
+                        android:text="@string/txt_biweek"
+                        android:onClick="onCheckboxClicked"
+
+                        android:textSize="@dimen/text_size_18dp" />
+
+                    <CheckBox
+                        android:id="@+id/check_1st"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dimens_10dp"
+                        android:text="@string/txt_first"
+                        android:onClick="onCheckboxClicked"
+
+                        android:textSize="@dimen/text_size_18dp" />
+
+                    <CheckBox
+                        android:id="@+id/check_monthly"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dimens_10dp"
+                        android:text="@string/txt_monthly"
+                        android:onClick="onCheckboxClicked"
+
+                        android:textSize="@dimen/text_size_18dp" />
+
+                    <CheckBox
+                        android:id="@+id/check_other"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dimens_10dp"
+                        android:text="@string/txt_other"
+                        android:onClick="onCheckboxClicked"
+
+                        android:textSize="@dimen/text_size_18dp" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btn_payment"
+                    android:layout_width="@dimen/dimens_180dp"
+                    android:layout_height="@dimen/dimens_50dp"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="@dimen/text_20"
+                    android:layout_marginTop="@dimen/dimens_20dp"
+                    android:background="@drawable/blue_box"
+                    android:text="@string/txt_pyment"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+
+</RelativeLayout>

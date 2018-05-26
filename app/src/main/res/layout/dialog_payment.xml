@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+    android:background="@drawable/debitcard"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dimens_10dp"
+        android:layout_marginRight="@dimen/dimens_10dp"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/black">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimens_10dp"
+                android:layout_marginTop="@dimen/dimens_10dp"
+                android:src="@drawable/logo_name"
+                android:textColor="@color/white" />
+
+            <ImageView
+                android:id="@+id/iv_cancle"
+                android:layout_width="@dimen/dimens_40dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/dimens_10dp"
+                android:src="@drawable/logo_small" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimens_50dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/dimens_10dp"
+            android:layout_marginRight="@dimen/dimens_10dp"
+            android:background="@drawable/rounded_rectangle1"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="Payment Amount :"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_18dp" />
+
+            <TextView
+                android:id="@+id/tv_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/dimens_10dp"
+                android:gravity="center"
+                android:text="25"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_18dp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/dimens_10dp"
+            android:background="@color/grey"></View>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="@dimen/dimens_8dp"
+                android:src="@drawable/visa1" />
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/dimens_10dp"
+                android:layout_marginTop="@dimen/dimens_8dp"
+                android:src="@drawable/mastercard1" />
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/dimens_10dp"
+
+                android:layout_marginTop="@dimen/dimens_8dp"
+                android:src="@drawable/american_express" />
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/dimens_10dp"
+
+                android:layout_marginTop="@dimen/dimens_8dp"
+                android:src="@drawable/paypal1" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dimens_10dp"
+            android:layout_marginTop="@dimen/dimens_10dp"
+            android:text="Card Number"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_18dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/dimens_10dp"
+                android:layout_marginTop="@dimen/dimens_5dp"
+                android:layout_weight="0.3"
+                android:src="@drawable/card" />
+
+            <EditText
+                android:id="@+id/et_cardNo1"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimens_50dp"
+                android:layout_marginRight="@dimen/dimens_10dp"
+                android:layout_marginTop="@dimen/dimens_10dp"
+                android:layout_weight="0.7"
+                android:background="@drawable/rounded_rectangle1"
+                android:hint="4242 4242 4242 4242 "
+                android:inputType="number"
+                android:maxLength="19"
+
+                android:paddingLeft="@dimen/dimens_5dp"
+                android:singleLine="true"
+                android:textAlignment="viewStart"
+                android:textColor="@color/colorWhite1"
+                android:textColorHint="@color/grey" />
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimens_10dp"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.4"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dimens_10dp"
+                    android:text="Card Number"
+
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_18dp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dimens_10dp"
+                    android:layout_marginTop="@dimen/dimens_8dp"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <EditText
+                        android:id="@+id/et_cardNo3"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dimens_50dp"
+                        android:layout_weight="0.5"
+                        android:background="@drawable/rounded_rectangle1"
+                        android:clickable="false"
+                        android:editable="false"
+                        android:hint="Month"
+                        android:paddingLeft="@dimen/dimens_5dp"
+                        android:singleLine="true"
+                        android:textAlignment="gravity"
+                        android:textColor="@color/colorWhite1"
+                        android:textColorHint="@color/grey" />
+
+                    <EditText
+                        android:id="@+id/et_cardNo2"
+                        android:layout_width="199dp"
+                        android:layout_height="@dimen/dimens_50dp"
+                        android:layout_marginLeft="@dimen/dimens_10dp"
+                        android:background="@drawable/rounded_rectangle1"
+                        android:clickable="false"
+                        android:editable="false"
+                        android:hint=" Year"
+
+                        android:paddingLeft="@dimen/dimens_5dp"
+                        android:singleLine="true"
+                        android:textAlignment="gravity"
+                        android:textColor="@color/colorWhite1"
+                        android:textColorHint="@color/grey" />
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimens_10dp"
+                android:layout_marginRight="@dimen/dimens_10dp"
+                android:layout_weight="0.6"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="CVV"
+
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_18dp" />
+
+
+                <EditText
+                    android:id="@+id/et_cvvName"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimens_50dp"
+                    android:layout_marginTop="@dimen/dimens_8dp"
+                    android:background="@drawable/rounded_rectangle1"
+                    android:inputType="numberPassword"
+                    android:maxLength="3"
+                    android:paddingLeft="@dimen/dimens_5dp"
+
+                    android:singleLine="true"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/colorWhite1" />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dimens_10dp"
+            android:layout_marginTop="@dimen/dimens_10dp"
+            android:text="Card Holder Name"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_18dp" />
+
+
+        <EditText
+            android:id="@+id/et_cardName"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimens_50dp"
+            android:layout_margin="@dimen/dimens_10dp"
+            android:background="@drawable/rounded_rectangle1"
+            android:hint=" Enter card holder name"
+            android:inputType="text"
+            android:paddingLeft="@dimen/dimens_5dp"
+
+            android:singleLine="true"
+            android:textAlignment="viewStart"
+            android:textColor="@color/colorWhite1"
+            android:textColorHint="@color/grey" />
+
+        <Button
+            android:id="@+id/btn_submit"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimens_50dp"
+            android:layout_gravity="right"
+            android:layout_marginLeft="@dimen/dimens_10dp"
+            android:layout_marginRight="@dimen/dimens_10dp"
+            android:background="@drawable/blue_box"
+            android:text="Pay" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dimens_10dp"
+            android:layout_marginRight="@dimen/dimens_10dp"
+            android:layout_marginTop="@dimen/dimens_40dp">
+
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/cardnew"
+
+                android:visibility="gone" />
+
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/grey"
+                android:visibility="gone"
+                app:errorTextAppearance="@style/error_appearance"
+                app:hintTextAppearance="@style/hint_appearancewhite">
+
+                <EditText
+                    android:id="@+id/et_cardNo"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Card Number"
+                    android:inputType="number"
+                    android:maxLength="19"
+                    android:singleLine="true"
+                    android:textColor="@color/colorWhite1"
+                    android:theme="@style/EditTextThemeWhite" />
+            </android.support.design.widget.TextInputLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dimens_10dp"
+            android:layout_marginTop="@dimen/dimens_20dp"
+            android:orientation="horizontal"
+
+            android:visibility="gone"
+            android:weightSum="1">
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_exprydate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:textColorHint="@color/grey"
+
+                android:visibility="gone"
+                app:errorTextAppearance="@style/error_appearance"
+                app:hintTextAppearance="@style/hint_appearancewhite">
+
+
+                <EditText
+                    android:id="@+id/et_exprydate"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimens_50dp"
+                    android:layout_marginTop="@dimen/dimens_10dp"
+                    android:backgroundTint="@color/white"
+                    android:hint="Expiry Date"
+                    android:inputType="text"
+                    android:maxLength="5"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/grey"
+                    android:textSize="@dimen/dimens_20dp"
+                    android:theme="@style/EditTextThemeWhite" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_cvv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:textColorHint="@color/grey"
+
+                app:errorTextAppearance="@style/error_appearance"
+                app:hintTextAppearance="@style/hint_appearancewhite">
+
+
+                <EditText
+                    android:id="@+id/et_cvvname"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimens_50dp"
+                    android:layout_marginTop="@dimen/dimens_10dp"
+                    android:layout_weight="0.5"
+                    android:backgroundTint="@color/white"
+                    android:hint="CVV"
+                    android:inputType="numberPassword"
+                    android:maxLength="3"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/grey"
+                    android:textSize="@dimen/dimens_20dp" />
+
+            </android.support.design.widget.TextInputLayout>
+        </LinearLayout>
+
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_cardname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/grey"
+
+            android:visibility="gone"
+            app:errorTextAppearance="@style/error_appearance"
+            app:hintTextAppearance="@style/hint_appearancewhite">
+
+
+            <EditText
+                android:id="@+id/et_name"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimens_50dp"
+                android:layout_marginLeft="@dimen/dimens_10dp"
+                android:backgroundTint="@color/white"
+                android:hint="Name On The Card"
+                android:inputType="text"
+                android:textColor="@color/white"
+                android:textColorHint="@color/grey"
+                android:textSize="@dimen/dimens_20dp"
+                android:theme="@style/EditTextThemeWhite" />
+        </android.support.design.widget.TextInputLayout>
+
+
+    </LinearLayout>
+</LinearLayout>

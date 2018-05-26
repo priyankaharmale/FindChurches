@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="#fff">
+
+    <LinearLayout
+        android:layout_width="@dimen/dimens_80dp"
+        android:layout_height="@dimen/dimens_50dp"
+        android:layout_marginTop="@dimen/dimens_10dp"
+
+        android:background="@drawable/small_box_line">
+
+        <TextView
+            android:id="@+id/tv_cost"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="25$"
+            android:textColor="@color/blackcolor"
+            android:textSize="@dimen/text_20" />
+    </LinearLayout>
+</RelativeLayout>

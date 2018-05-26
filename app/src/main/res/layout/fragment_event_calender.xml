@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <hnweb.com.findchurches.calender.CustomCalendarView
+        android:id="@+id/calendar_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/dimens_50dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        app:background="@color/color_calender_background"
+        app:calendarBackgroundColor="@color/color_calender_background"
+        app:calendarTitleTextColor="@color/blue_dark"
+        app:currentDayOfMonthColor="@color/white"
+        app:dayOfMonthTextColor="@color/grey"
+        app:dayOfWeekTextColor="@color/colorBlack"
+        app:disabledDayBackgroundColor="@color/color_calender_background"
+        app:disabledDayTextColor="#DEDEDE"
+        app:selectedDayBackgroundColor="@color/color_add_button"
+        app:titleLayoutBackgroundColor="@color/color_calender_background"
+        app:weekLayoutBackgroundColor="@color/color_calender_background">
+
+    </hnweb.com.findchurches.calender.CustomCalendarView>
+
+</LinearLayout>

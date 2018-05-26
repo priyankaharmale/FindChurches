@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite1">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorBlack">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/logo"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/logo" />
+
+                <ImageView
+                    android:id="@+id/name"
+                    android:layout_width="200dp"
+                    android:layout_height="@dimen/dimens_30dp"
+                    android:layout_margin="@dimen/dimens_10dp"
+                    android:layout_toRightOf="@+id/logo"
+                    android:src="@drawable/logo_name" />
+            </RelativeLayout>
+        </Toolbar>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:weightSum="1">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.8"
+                    android:background="@color/grey">
+
+                    <ImageView
+                        android:id="@+id/iv_church"
+                        android:layout_width="match_parent"
+                        android:layout_height="250dp" />
+
+                    <ProgressBar
+                        android:id="@+id/progress"
+                        style="?android:attr/progressBarStyleSmall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:indeterminate="true"
+                        android:indeterminateTint="@color/color_grey"
+                        android:indeterminateTintMode="src_atop"
+                        android:visibility="visible" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/dimens_20dp"
+                    android:layout_marginRight="@dimen/dimens_20dp"
+                    android:layout_marginTop="@dimen/dimens_10dp"
+                    android:layout_weight="0.3"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/iv_profile"
+                            android:layout_width="@dimen/dimens_55dp"
+                            android:layout_height="@dimen/dimens_55dp"
+                            android:src="@drawable/profile_white" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/str_profile"
+                            android:textAllCaps="true"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="@dimen/text_size_12sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/iv_location"
+                            android:layout_width="@dimen/dimens_55dp"
+                            android:layout_height="@dimen/dimens_55dp"
+                            android:layout_marginLeft="@dimen/dimens_10dp"
+                            android:src="@drawable/placeholder" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/str_gps"
+                            android:textColor="@color/colorBlack" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/iv_calender"
+                            android:layout_width="@dimen/dimens_55dp"
+                            android:layout_height="@dimen/dimens_55dp"
+                            android:layout_marginLeft="@dimen/dimens_10dp"
+                            android:src="@drawable/calendar" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/str_event"
+                            android:textAllCaps="true"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="@dimen/text_size_12sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/iv_donate"
+                            android:layout_width="@dimen/dimens_55dp"
+                            android:layout_height="@dimen/dimens_55dp"
+                            android:layout_marginLeft="@dimen/dimens_10dp"
+                            android:src="@drawable/donation"
+
+                            android:textSize="@dimen/text_size_12sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/str_donation"
+                            android:textAllCaps="true"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="@dimen/text_size_12sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/iv_favarite"
+                            android:layout_width="@dimen/dimens_55dp"
+                            android:layout_height="@dimen/dimens_55dp"
+
+                            android:layout_marginLeft="@dimen/dimens_10dp"
+                            android:src="@drawable/favorite" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="@dimen/dimens_5dp"
+                            android:text="@string/str_fav"
+                            android:textAllCaps="true"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="@dimen/text_size_12sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <FrameLayout
+                    android:id="@+id/content_frame"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_above="@+id/navigation"
+                    android:layout_margin="@dimen/dimens_10dp"
+                    android:layout_weight="0.4"
+                    android:orientation="vertical"></FrameLayout>
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_doanteNow"
+        android:layout_width="250dp"
+        android:layout_height="@dimen/dimens_50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/dimens_10dp"
+        android:background="@drawable/blue_box"
+        android:text="Donate"
+        android:textAllCaps="false"
+        android:textColor="@color/colorWhite1"
+        android:textSize="@dimen/text_size_18sp" />
+</RelativeLayout>

@@ -1,0 +1,128 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+
+    <style name="error_appearance" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/colorRed</item>
+        <item name="android:cacheColorHint">@color/colorWhite1</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+
+
+
+    <style name="hint_appearanceblack" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/grey</item>
+        <item name="colorControlActivated">@color/grey</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="hint_appearancewhite" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/grey</item>
+        <item name="colorControlActivated">@color/colorWhite1</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="hint_appearancered" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/colorRed</item>
+        <item name="colorControlActivated">@color/colorWhite1</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="hint_appearanceblack1" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/grey</item>
+        <item name="colorControlActivated">@color/grey</item>
+        <item name="android:textColorHint">@color/grey</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+
+    <style name="AppCompatAlertDialogStyle" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="colorAccent">@color/colorPrimary</item>
+        <item name="android:textColorPrimary">@color/colorPrimaryDark</item>
+        <item name="android:background">@color/colorWhite1</item>
+    </style>
+
+
+    <style name="Theme.Custom" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:calendarViewStyle">@style/Widget.CalendarView.Custom</item>
+    </style>
+
+    <style name="Widget.CalendarView.Custom" parent="android:Widget.CalendarView">
+        <item name="android:focusedMonthDateColor">@color/colorRed</item>
+        <item name="android:weekNumberColor">@color/colorRed</item>
+
+    </style>
+
+
+    <style name="EditTextThemeWhite" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorControlNormal">@color/grey</item>
+        <item name="colorControlActivated">@color/colorWhite1</item>
+        <item name="colorControlHighlight">@color/colorWhite1</item>
+    </style>
+
+    <style name="EditTextThemeWhite1" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorControlNormal">@color/grey</item>
+        <item name="colorControlActivated">@color/grey</item>
+        <item name="colorControlHighlight">@color/grey</item>
+    </style>
+
+    <!--    @attr ref android.R.styleable#CalendarView_showWeekNumber
+        @attr ref android.R.styleable#CalendarView_firstDayOfWeek
+        @attr ref android.R.styleable#CalendarView_minDate
+        @attr ref android.R.styleable#CalendarView_maxDate
+        @attr ref android.R.styleable#CalendarView_shownWeekCount
+        @attr ref android.R.styleable#CalendarView_selectedWeekBackgroundColor
+        @attr ref android.R.styleable#CalendarView_focusedMonthDateColor
+        @attr ref android.R.styleable#CalendarView_unfocusedMonthDateColor
+        @attr ref android.R.styleable#CalendarView_weekNumberColor
+        @attr ref android.R.styleable#CalendarView_weekSeparatorLineColor
+        @attr ref android.R.styleable#CalendarView_selectedDateVerticalBar
+        @attr ref android.R.styleable#CalendarView_weekDayTextAppearance
+        @attr ref android.R.styleable#CalendarView_dateTextAppearance-->
+
+
+
+    <style name="CalendarView" />
+
+    <style name="CalendarView.MonthTitle">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="CalendarView.DayOfTheWeek">
+        <item name="android:textSize">14sp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="CalendarView.DayOfTheMonth">
+        <item name="android:textSize">14sp</item>
+        <item name="android:minHeight">@dimen/minDayCellHeight</item>
+    </style>
+    <style name="TextAppearance.App.TextInputLayout" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:colorControlActivated">@color/white</item>
+    </style>
+
+
+</resources>

@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorBlack">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="30dp"
+                android:src="@drawable/logo" />
+
+            <ImageView
+                android:layout_width="200dp"
+                android:layout_height="@dimen/dimens_30dp"
+                android:layout_margin="@dimen/dimens_10dp"
+                android:src="@drawable/logo_name"
+                />
+        </Toolbar>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimens_30dp"
+            android:gravity="center"
+            android:text="@string/str_logintxt"
+            android:textColor="@color/colorWhite1"
+            android:textSize="@dimen/text_size_18dp" />
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_email"
+            app:errorTextAppearance="@style/error_appearance"
+            app:hintTextAppearance="@style/hint_appearancewhite"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/text_20"
+            android:layout_marginLeft="@dimen/dimens_20dp"
+            android:layout_marginRight="@dimen/dimens_20dp"
+            android:backgroundTint="@color/colorWhite1"
+            android:textColorHint="@color/colorWhite1">
+
+            <EditText
+                android:id="@+id/et_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/colorWhite1"
+                android:ems="10"
+                android:hint="@string/str_emailId"
+                android:inputType="textEmailAddress"
+                android:singleLine="true"
+                android:text=""
+                android:textColor="@color/colorWhite1"
+                android:theme="@style/EditTextThemeWhite" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_password"
+            app:errorTextAppearance="@style/error_appearance"
+            app:hintTextAppearance="@style/hint_appearancewhite"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimens_10dp"
+            android:layout_marginLeft="@dimen/dimens_20dp"
+            android:layout_marginRight="@dimen/dimens_20dp"
+            android:backgroundTint="@color/colorWhite1"
+            android:textColorHint="@color/colorWhite1">
+
+            <EditText
+                android:id="@+id/et_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/colorWhite1"
+                android:ems="10"
+                android:hint="@string/str_password"
+                android:inputType="textPassword"
+                android:singleLine="true"
+
+                android:textColor="@color/colorWhite1"
+                android:theme="@style/EditTextThemeWhite" />
+        </android.support.design.widget.TextInputLayout>
+
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="20dp"
+            android:background="@drawable/rounded_rectangle"
+            android:gravity="center"
+            android:text="@string/btn_login"
+            android:id="@+id/btn_login"
+            android:textColor="@color/colorWhite1" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/dimens_20dp"
+            android:layout_marginRight="@dimen/dimens_20dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/str_forgotpwd"
+                android:textColor="@color/colorWhite1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/str_clickher"
+                android:id="@+id/tv_click_here"
+                android:textColor="@color/colorWhite1" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimens_30dp"
+            android:gravity="center"
+            android:text="@string/str_dont"
+            android:textColor="@color/colorWhite1"
+            android:textSize="@dimen/text_size_16sp" />
+
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="20dp"
+            android:background="@drawable/white_button"
+            android:gravity="center"
+            android:id="@+id/btn_createacc"
+            android:text="@string/btn_create"
+            android:textColor="@color/colorBlack" />
+    </LinearLayout>
+</ScrollView>

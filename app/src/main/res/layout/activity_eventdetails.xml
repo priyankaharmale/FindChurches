@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite1">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorBlack">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/logo"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/logo" />
+
+                <ImageView
+                    android:id="@+id/name"
+                    android:layout_width="200dp"
+                    android:layout_height="@dimen/dimens_30dp"
+                    android:layout_margin="@dimen/dimens_10dp"
+                    android:layout_toRightOf="@+id/logo"
+                    android:src="@drawable/logo_name" />
+            </RelativeLayout>
+        </Toolbar>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorBlack">
+
+                    <ImageView
+                        android:id="@+id/iv_church"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dimens_220dp" />
+
+                    <ProgressBar
+                        android:id="@+id/progress"
+                        style="?android:attr/progressBarStyleSmall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:indeterminate="true"
+                        android:indeterminateTint="@color/colorWhite1"
+                        android:indeterminateTintMode="src_atop"
+                        android:visibility="visible" />
+
+                    <TextView
+                        android:id="@+id/tv_churchname"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignEnd="@+id/iv_church"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="@dimen/dimens_10dp"
+                        android:text="Church Name"
+                        android:textColor="@color/colorWhite1"
+                        android:textSize="@dimen/text_size_18sp"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/tv_eventname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignEnd="@+id/iv_church"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="@dimen/dimens_10dp"
+                    android:layout_marginBottom="@dimen/dimens_10dp"
+                    android:text="Event Name"
+                    android:textColor="@color/color_calender_bg"
+                    android:textSize="@dimen/text_size_18sp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/dimens_10dp"
+                        android:layout_marginBottom="@dimen/dimens_10dp"
+                        android:text="Event Date : "
+                        android:textColor="@color/color_mail_id"
+                        android:textSize="@dimen/text_size_14sp" />
+
+                    <TextView
+                        android:id="@+id/tv_eventdate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/dimens_10dp"
+                        android:layout_marginBottom="@dimen/dimens_10dp"
+                        android:text=""
+                        android:textColor="@color/color_mail_id"
+                        android:textSize="@dimen/text_size_14sp" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_eventdesc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignEnd="@+id/iv_church"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="@dimen/dimens_10dp"
+                    android:layout_marginBottom="@dimen/dimens_10dp"
+                    android:text="Event Name"
+                    android:textColor="@color/color_mail_id"
+                    android:textSize="@dimen/text_size_14sp" />
+
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+
+</RelativeLayout>

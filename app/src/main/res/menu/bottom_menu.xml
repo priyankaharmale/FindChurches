@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/action_home"
+        android:icon="@drawable/me_icon_gray"
+        android:iconTint="@color/color_product_name"
+        android:title="@string/str_menu_me" />
+
+    <item
+        android:id="@+id/action_bag"
+        android:icon="@drawable/charity_icon_gray"
+        android:iconTint="@color/color_product_name"
+
+        android:title="@string/str_menu_charti" />
+
+    <item
+        android:id="@+id/action_account"
+        android:icon="@drawable/worship_icon_gray1"
+        android:iconTint="@color/color_product_name"
+
+        android:title="@string/str_menu_work" />
+
+</menu>

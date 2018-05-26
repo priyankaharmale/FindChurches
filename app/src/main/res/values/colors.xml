@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorAccent">#000000</color>
+
+    <!-- <color name="colorAccent">#FFFFFF</color>-->
+    <color name="colorBlack">#000000</color>
+    <color name="colorWhite1">#FFFFFF</color>
+    <color name="colorRed">#ff0000 </color>
+    <color name="color_product_name">#808080 </color>
+    <color name="color_product_price">#7BC48D </color>
+    <color name="color_add_button">#3DB39B </color>
+    <color name="color_sort_by">#06A8FD </color>
+    <color name="color_calender_bg">#205694</color>
+    <color name="color_invite_others">#0092e6</color>
+    <color name="color_dark_grey">#5A5A5A</color>
+    <color name="color_grey">#3D3D3D</color>
+    <color name="color_mail_id">#6BA5D7</color>
+    <color name="color_event_text_calender">#17AC58</color>
+    <color name="color_calender_background">#F9F9F9</color>
+
+    <!---->
+    <color name="white">#FFFFFF</color>
+    <color name="black">#222222</color>
+    <color name="day_disabled_background_color">#F1F5F8</color>
+    <color name="day_disabled_text_color">#DEDEDE</color>
+    <color name="selected_day_background">#0387ce</color>
+    <color name="current_day_of_month">#03A7E9</color>
+    <color name="off_white">#FDFDFD</color>
+    <color name="blue">#0000ff</color>
+    <color name="grey">#808080</color>
+    <color name="maroon">#800000</color>
+    <color name="blackcolor">#303030</color>
+    <color name="green">#008000</color>
+    <color name="text_purple_color">#551A8B</color>
+    <color name="text_orange_color">#FF5733</color>
+    <color name="light_orange">#DF7401</color>
+
+
+    <color name="blue_dark">#007acc</color>
+</resources>
