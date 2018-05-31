@@ -15,6 +15,7 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -38,7 +39,7 @@ public class DonationCostListActvity extends AppCompatActivity {
             isClick_100doller = "1", isClick_250doller = "1", isClick_500doller = "1", isClick_1000doller = "1";
     Button btn_payment;
     int count = 0, total = 0;
-    CheckBox check_youthtrip, check_cyber, check_other;
+    RadioButton check_youthtrip, check_cyber, check_other;
     ArrayList<String> strings;
     String str_check = "";
     int countSave = 0;
@@ -65,9 +66,9 @@ public class DonationCostListActvity extends AppCompatActivity {
         btn_payment = (Button) findViewById(R.id.btn_payment);
         btn_cost = (Button) findViewById(R.id.btn_cost);
         strings = new ArrayList<>();
-        check_youthtrip = (CheckBox) findViewById(R.id.check_youthtrip);
-        check_cyber = (CheckBox) findViewById(R.id.check_cyber);
-        check_other = (CheckBox) findViewById(R.id.check_other);
+        check_youthtrip = (RadioButton) findViewById(R.id.check_youthtrip);
+        check_cyber = (RadioButton) findViewById(R.id.check_cyber);
+        check_other = (RadioButton) findViewById(R.id.check_other);
         btn_cost.setVisibility(View.GONE);
 
         btn_10doller.setOnClickListener(new View.OnClickListener() {
@@ -332,7 +333,7 @@ public class DonationCostListActvity extends AppCompatActivity {
 
     public void onCheckboxClicked(View view) {
         // Is the view now checked?
-        boolean checked = ((CheckBox) view).isChecked();
+        boolean checked = ((RadioButton) view).isChecked();
 
         // Check which checkbox was clicked
         switch (view.getId()) {

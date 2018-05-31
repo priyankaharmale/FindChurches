@@ -23,6 +23,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -162,7 +163,7 @@ public class PaymentTotalActivity extends AppCompatActivity implements OnCallBac
 
     public void onCheckboxClicked(View view) {
         // Is the view now checked?
-        boolean checked = ((CheckBox) view).isChecked();
+        boolean checked = ((RadioButton) view).isChecked();
 
         // Check which checkbox was clicked
         switch (view.getId()) {
