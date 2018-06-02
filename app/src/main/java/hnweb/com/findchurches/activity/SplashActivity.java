@@ -26,6 +26,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.crashlytics.android.Crashlytics;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -38,6 +39,7 @@ import java.util.Date;
 import hnweb.com.findchurches.R;
 import hnweb.com.findchurches.contants.AppConstant;
 import hnweb.com.findchurches.utility.MyLocationListener;
+import io.fabric.sdk.android.Fabric;
 
 import static hnweb.com.findchurches.utility.LocationSet.checkPermissions;
 import static hnweb.com.findchurches.utility.LocationSet.requestPermission;
@@ -66,6 +68,7 @@ public class SplashActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Fabric.with(this, new Crashlytics());
         setContentView(R.layout.activity_splash);
         myLocationListener = new MyLocationListener(SplashActivity.this);
         if (checkPermissions(android.Manifest.permission.ACCESS_FINE_LOCATION, getApplicationContext(), SplashActivity.this)) {
@@ -125,7 +128,7 @@ public class SplashActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (islogin) {
-                    Intent intent = new Intent(SplashActivity.this, MainActivity.class);
+                    Intent intent = new Intent(SplashActivity.this, RecipetDetailActivity.class);
                     startActivity(intent);
                     finish();
                 } else {

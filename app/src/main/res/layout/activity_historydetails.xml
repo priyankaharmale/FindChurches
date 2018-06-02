@@ -249,6 +249,7 @@
                 android:layout_marginTop="@dimen/dimens_20dp"
                 android:background="@drawable/blue_box"
                 android:text="Done"
+                android:visibility="gone"
                 android:textAllCaps="false"
                 android:textColor="@color/white" />
         </LinearLayout>

@@ -1,0 +1,59 @@
+{
+  "project_info": {
+    "project_number": "751868679389",
+    "firebase_url": "https://seedharvestgivingsapp.firebaseio.com",
+    "project_id": "seedharvestgivingsapp",
+    "storage_bucket": "seedharvestgivingsapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:751868679389:android:a895e7371d335b64",
+        "android_client_info": {
+          "package_name": "hnweb.com.findchurches"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "751868679389-uun6r03l78v613nta2v4vo0q0auroaur.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "hnweb.com.findchurches",
+            "certificate_hash": "2ec5b6e3e0368343c94a1589930f6284d4f33df6"
+          }
+        },
+        {
+          "client_id": "751868679389-e1krqm2b84a7ovsqlve16n2gbufb2ra8.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "751868679389-e1krqm2b84a7ovsqlve16n2gbufb2ra8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBNlhu24Hsbm_dzu6sA2tFlPq0owRKxYCc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "751868679389-e1krqm2b84a7ovsqlve16n2gbufb2ra8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

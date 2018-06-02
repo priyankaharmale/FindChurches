@@ -32,7 +32,7 @@ dependencies {
     compile 'de.hdodenhof:circleimageview:1.3.0'
     compile 'com.android.support:cardview-v7:27.1.0'
     compile 'com.google.maps.android:android-maps-utils:0.4'
-    compile 'com.google.android.gms:play-services-maps:9.6.1'
+    compile 'com.google.android.gms:play-services:11.8.0'
     compile 'com.github.bumptech.glide:glide:3.7.0'
     testCompile 'junit:junit:4.12'
     compile 'com.google.code.gson:gson:2.8.0'
@@ -43,6 +43,18 @@ dependencies {
     compile 'com.twitter.sdk.android:tweet-ui:3.1.1'
     compile 'com.twitter.sdk.android:tweet-composer:3.1.1'
     compile 'com.twitter.sdk.android:twitter-mopub:3.1.1'
-    /**********************Facebook Authentication************************************************/
+    /**********************Facebook Authentication**************************/
     compile 'com.facebook.android:facebook-android-sdk:4.6.0'
+
+
+    /******************************Crash analytics**********************************************/
+    implementation 'com.crashlytics.sdk.android:crashlytics:2.9.3'
+
+
+
+    /*Facebook :  mike222taylor@gmail.com*/
+
+    /***************Crash Analytics :: mike666taylor@gmail.com************/
 }
+apply plugin: 'com.google.gms.google-services'
+apply plugin: 'io.fabric'

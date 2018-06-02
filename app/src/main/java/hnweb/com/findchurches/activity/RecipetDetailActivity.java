@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -31,7 +32,7 @@ public class RecipetDetailActivity extends AppCompatActivity {
     EditText et_commnet;
     ImageView iv_twitter, iv_facebook;
     ShareDialog shareDialog;
-
+    boolean isAppInstalled;
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,6 +51,7 @@ public class RecipetDetailActivity extends AppCompatActivity {
         iv_facebook = (ImageView) findViewById(R.id.iv_facebook);
         et_commnet = (EditText) findViewById(R.id.et_commnet);
         shareDialog = new ShareDialog(this);
+        isAppInstalled  = appInstalledOrNot("com.facebook");
 
 
         final SharedPreferences settings = getSharedPreferences("AOP_PREFS", Context.MODE_PRIVATE); //1
@@ -101,22 +103,53 @@ public class RecipetDetailActivity extends AppCompatActivity {
                 if (et_commnet.getText().toString().equals("")) {
                     et_commnet.setError("Please Enter the Post");
                 } else {
+                    if (isAppInstalled) {
+                        // checkPermission(callbackId, Manifest.permission.READ_CALENDAR, Manifest.permission.WRITE_CALENDAR);
 
-                    // checkPermission(callbackId, Manifest.permission.READ_CALENDAR, Manifest.permission.WRITE_CALENDAR);
+                        //   pushAppointmentsToCalender(SharePostActivity.this, "sdfsd", "sdfsd", "Pune", 1, 12 - 04 - 2018, true, true);
 
-                    //   pushAppointmentsToCalender(SharePostActivity.this, "sdfsd", "sdfsd", "Pune", 1, 12 - 04 - 2018, true, true);
+                       // Show facebook ShareDialog
 
-                    if (ShareDialog.canShow(ShareLinkContent.class)) {
+                        if (ShareDialog.canShow(ShareLinkContent.class)) {
+                            ShareLinkContent linkContent = new ShareLinkContent.Builder()
+                                    .setContentTitle(et_commnet.getText().toString())
+
+                                    // .setImageUrl(Uri.parse("https://www.numetriclabz.com/wp-content/uploads/2015/11/114.png"))
+                                    .build();
+                            shareDialog.show(linkContent);
+                            }
+                    } else {
+                       /* Intent share = new Intent(android.content.Intent.ACTION_SEND);
+                        share.setType("text/plain");
+                        share.addFlags(Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET);
+
+                        // Add data to the intent, the receiving app will decide
+                        // what to do with it.
+                        share.putExtra(Intent.EXTRA_SUBJECT, et_commnet.getText().toString());
+
+                        startActivity(Intent.createChooser(share, "Share"));*/
+
                         ShareLinkContent linkContent = new ShareLinkContent.Builder()
                                 .setContentTitle(et_commnet.getText().toString())
 
                                 // .setImageUrl(Uri.parse("https://www.numetriclabz.com/wp-content/uploads/2015/11/114.png"))
                                 .build();
-                        shareDialog.show(linkContent);  // Show facebook ShareDialog
+                        shareDialog.show(linkContent);
                     }
                 }
             }
         });
 
+    }
+
+    private boolean appInstalledOrNot(String uri) {
+        PackageManager pm = getPackageManager();
+        try {
+            pm.getPackageInfo(uri, PackageManager.GET_ACTIVITIES);
+            return true;
+        } catch (PackageManager.NameNotFoundException e) {
+        }
+
+        return false;
     }
 }
