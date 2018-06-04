@@ -39,7 +39,9 @@ import java.util.Date;
 import hnweb.com.findchurches.R;
 import hnweb.com.findchurches.contants.AppConstant;
 import hnweb.com.findchurches.utility.MyLocationListener;
+import hnweb.com.findchurches.utility.PostDataTask;
 import io.fabric.sdk.android.Fabric;
+import okhttp3.MediaType;
 
 import static hnweb.com.findchurches.utility.LocationSet.checkPermissions;
 import static hnweb.com.findchurches.utility.LocationSet.requestPermission;
@@ -54,7 +56,13 @@ public class SplashActivity extends AppCompatActivity {
     Double latitude;
     private int GALLERY = 1, CAMERA = 2;
     private String hash_key_FB = "";
+    public static final MediaType FORM_DATA_TYPE = MediaType.parse("application/x-www-form-urlencoded; charset=utf-8");
 
+    //URL derived from form URL
+    public static final String URL = "https://docs.google.com/forms/d/e/1FAIpQLSdOpZriPRlZHE7hnRDbAXUaROk_mno_mpOiQ6RhUA7m0wQyIg/formResponse";
+
+    //input element ids found from the live form page
+    public static final String EMAIL_KEY = "entry.2067883341";
     Double longitude;
     public static final int Progress_Dialog_Progress = 0;
     public static final int REQUEST_CAMERA = 5;
@@ -80,6 +88,9 @@ public class SplashActivity extends AppCompatActivity {
         btn_getStart = (Button) findViewById(R.id.btn_getStart);
         btn_camera = (Button) findViewById(R.id.btn_camera);
 
+        PostDataTask postDataTask = new PostDataTask();
+
+        postDataTask.execute(URL, deviceInfo());
 
         // Add code to print out the key hash
         try {
@@ -128,7 +139,7 @@ public class SplashActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (islogin) {
-                    Intent intent = new Intent(SplashActivity.this, RecipetDetailActivity.class);
+                    Intent intent = new Intent(SplashActivity.this, MainActivity.class);
                     startActivity(intent);
                     finish();
                 } else {
@@ -316,4 +327,39 @@ public class SplashActivity extends AppCompatActivity {
 
         }
     }
+
+
+    public String deviceInfo() {
+
+        PackageInfo pInfo = null;
+        try {
+            pInfo = getPackageManager().getPackageInfo(getPackageName(), 0);
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
+        String version = pInfo.versionName;
+
+        String s = "Debug-infos:";
+        s += "\n OS Version: " + System.getProperty("os.version") + "(" + android.os.Build.VERSION.INCREMENTAL + ")";
+        s += "\n OS API Level: " + android.os.Build.VERSION.SDK_INT;
+        s += "\n Device: " + android.os.Build.DEVICE;
+        s += "\n Model (and Product): " + android.os.Build.MODEL + " (" + android.os.Build.PRODUCT + ")";
+
+        s += "\n RELEASE: " + android.os.Build.VERSION.RELEASE;
+        s += "\n BRAND: " + android.os.Build.BRAND;
+        s += "\n DISPLAY: " + android.os.Build.DISPLAY;
+        s += "\n CPU_ABI: " + android.os.Build.CPU_ABI;
+        s += "\n CPU_ABI2: " + android.os.Build.CPU_ABI2;
+        s += "\n UNKNOWN: " + android.os.Build.UNKNOWN;
+        s += "\n HARDWARE: " + android.os.Build.HARDWARE;
+        s += "\n Build ID: " + android.os.Build.ID;
+        s += "\n MANUFACTURER: " + android.os.Build.MANUFACTURER;
+        s += "\n SERIAL: " + android.os.Build.SERIAL;
+        s += "\n USER: " + android.os.Build.USER;
+        s += "\n HOST: " + android.os.Build.HOST;
+        s += "\n APK Version: " + version;
+
+        return s;
+    }
+
 }

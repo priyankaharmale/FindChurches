@@ -608,4 +608,36 @@ public class PaymentTotalActivity extends AppCompatActivity implements OnCallBac
         et_year.setText(count);
 
     }
+
+    public void dialog1() {
+        final Dialog dialog = new Dialog(PaymentTotalActivity.this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+
+        dialog.setContentView(R.layout.dialog_other);
+
+        final EditText et_amount = (EditText) dialog.findViewById(R.id.et_amount);
+        dialog.show();
+        Button declineButton = (Button) dialog.findViewById(R.id.btn_submit);
+        ImageView iv_cancle = (ImageView) dialog.findViewById(R.id.iv_cancle);
+        declineButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Close dialog
+                if (et_amount.getText().toString().equals("")) {
+                    Toast.makeText(PaymentTotalActivity.this, "Please Enter Other Set Recurring", Toast.LENGTH_SHORT).show();
+                } else {
+                    dialog.dismiss();
+                    count = Integer.valueOf(et_amount.getText().toString());
+                  //  btn_cost.setText("$" + String.valueOf(count));
+                   // btn_cost.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+        iv_cancle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+            }
+        });
+    }
 }
