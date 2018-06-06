@@ -245,6 +245,7 @@ public class PaymentTotalActivity extends AppCompatActivity implements OnCallBac
         final EditText et_cardName = (EditText) dialog.findViewById(R.id.et_cardName);
         Button btn_submit = (Button) dialog.findViewById(R.id.btn_submit);
         TextView tv_amount = (TextView) dialog.findViewById(R.id.tv_amount);
+        ImageView iv_close=(ImageView) dialog.findViewById(R.id.iv_close);
 
         tv_amount.setText("$" + String.valueOf(count));
 
@@ -252,6 +253,12 @@ public class PaymentTotalActivity extends AppCompatActivity implements OnCallBac
         dialog.setCancelable(true);
 
 
+        iv_close.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+            }
+        });
         et_cardNo.addTextChangedListener(new TextWatcher() {
             private static final char space = ' ';
             boolean isDelete = true;

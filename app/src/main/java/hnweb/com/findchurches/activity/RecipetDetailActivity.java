@@ -27,12 +27,13 @@ import hnweb.com.findchurches.model.ChurchModelClass;
 
 public class RecipetDetailActivity extends AppCompatActivity {
     ChurchModelClass churchModelClass;
-    TextView tv_address, tv_churchname, tv_envolpe, tv_totalamount, tv_receiptNo, tv_date, tv_approvedcode;
+    TextView tv_address, tv_churchname, tv_envolpe, tv_totalamount, tv_receiptNo, tv_date, tv_approvedcode, tv_history;
     Button btn_payment;
     EditText et_commnet;
     ImageView iv_twitter, iv_facebook;
     ShareDialog shareDialog;
     boolean isAppInstalled;
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,11 +51,22 @@ public class RecipetDetailActivity extends AppCompatActivity {
         iv_twitter = (ImageView) findViewById(R.id.iv_twitter);
         iv_facebook = (ImageView) findViewById(R.id.iv_facebook);
         et_commnet = (EditText) findViewById(R.id.et_commnet);
+        tv_history = (TextView) findViewById(R.id.tv_history);
         shareDialog = new ShareDialog(this);
-        isAppInstalled  = appInstalledOrNot("com.facebook");
+
+        isAppInstalled = appInstalledOrNot("com.facebook");
 
 
         final SharedPreferences settings = getSharedPreferences("AOP_PREFS", Context.MODE_PRIVATE); //1
+
+        tv_history.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(RecipetDetailActivity.this, HistoryActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
         btn_payment.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -108,7 +120,7 @@ public class RecipetDetailActivity extends AppCompatActivity {
 
                         //   pushAppointmentsToCalender(SharePostActivity.this, "sdfsd", "sdfsd", "Pune", 1, 12 - 04 - 2018, true, true);
 
-                       // Show facebook ShareDialog
+                        // Show facebook ShareDialog
 
                         if (ShareDialog.canShow(ShareLinkContent.class)) {
                             ShareLinkContent linkContent = new ShareLinkContent.Builder()
@@ -117,7 +129,7 @@ public class RecipetDetailActivity extends AppCompatActivity {
                                     // .setImageUrl(Uri.parse("https://www.numetriclabz.com/wp-content/uploads/2015/11/114.png"))
                                     .build();
                             shareDialog.show(linkContent);
-                            }
+                        }
                     } else {
                        /* Intent share = new Intent(android.content.Intent.ACTION_SEND);
                         share.setType("text/plain");

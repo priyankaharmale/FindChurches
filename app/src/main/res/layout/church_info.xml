@@ -24,7 +24,7 @@
             android:layout_marginTop="@dimen/dimens_15dp"
 
             android:layout_toRightOf="@+id/iv_church"
-            android:text="Church Name"
+            android:text="Loading......"
             android:textColor="@color/colorBlack"
 
             android:textSize="16dp" />
@@ -38,7 +38,7 @@
             android:layout_marginTop="8dp"
             android:layout_toRightOf="@+id/iv_church"
             android:singleLine="false"
-            android:text="dssf"
+            android:text=""
             android:textColor="@color/colorBlack"
             android:textSize="14dp" />
 

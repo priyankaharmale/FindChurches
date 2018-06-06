@@ -24,6 +24,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.Cache;
 import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -450,22 +451,30 @@ public class WokShipFragment extends Fragment implements LocationListener, Googl
 */
         }
 
-        Geocoder geocoder = new Geocoder(getActivity(), Locale.ENGLISH);
+
         try {
-            List<Address> addresses = geocoder.getFromLocation(25.761681, -80.191788, 1);
-            if (addresses != null) {
-                returnedAddress = addresses.get(0);
-                strReturnedAddress = new StringBuilder("Address:\n");
-                for (int i = 0; i < returnedAddress.getMaxAddressLineIndex(); i++) {
-                    strReturnedAddress.append(returnedAddress.getAddressLine(i)).append("\n");
+            try {
+                Geocoder geocoder = new Geocoder(getActivity(), Locale.ENGLISH);
+                List<Address> addresses = geocoder.getFromLocation(25.761681, -80.191788, 1);
+                if (addresses != null) {
+                    returnedAddress = addresses.get(0);
+                    strReturnedAddress = new StringBuilder("Address:\n");
+                    for (int i = 0; i < returnedAddress.getMaxAddressLineIndex(); i++) {
+                        strReturnedAddress.append(returnedAddress.getAddressLine(i)).append("\n");
+                    }
+                    // Toast.makeText(getApplicationContext(),"" +strReturnedAddress.toString(),Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(getActivity(), "No Address returned!", Toast.LENGTH_SHORT).show();
                 }
-                // Toast.makeText(getApplicationContext(),"" +strReturnedAddress.toString(),Toast.LENGTH_SHORT).show();
-            } else {
-                Toast.makeText(getActivity(), "No Address returned!", Toast.LENGTH_SHORT).show();
+            } catch (IOException e) {
+                e.printStackTrace();
             }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+            }
+            catch (NullPointerException e)
+            {
+                e.printStackTrace();
+
+            }
         googleMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
         googleMap.animateCamera(CameraUpdateFactory.zoomTo(16));
         // Toast.makeText(MapsActivity.this, "  " + latitude + "  " + longitude, Toast.LENGTH_SHORT).show();
@@ -505,62 +514,72 @@ public class WokShipFragment extends Fragment implements LocationListener, Googl
 
                         // Getting view from the layout file info_window_layout
                         View view = getLayoutInflater().inflate(R.layout.church_info, null);
-                        final ChurchModelClass infoWindowData = churchModelClasses.get(markers.indexOf(marker));
-                        TextView tv_churchname = view.findViewById(R.id.tv_churchname);
-                        TextView tv_address = view.findViewById(R.id.tv_address);
-                        ImageView iv_church = view.findViewById(R.id.iv_church);
-                        Button btn_donateNow = view.findViewById(R.id.btn_donateNow);
+                        try {
+                            final ChurchModelClass infoWindowData = churchModelClasses.get(markers.indexOf(marker));
+                            TextView tv_churchname = view.findViewById(R.id.tv_churchname);
+                            TextView tv_address = view.findViewById(R.id.tv_address);
+                            ImageView iv_church = view.findViewById(R.id.iv_church);
+                            Button btn_donateNow = view.findViewById(R.id.btn_donateNow);
 
-                        googleMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
-                            public void onInfoWindowClick(Marker marker) {
-                                Intent intent = new Intent(getActivity(), ChurchDetailActivity.class);
+                            googleMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
+                                public void onInfoWindowClick(Marker marker) {
+                                    Intent intent = new Intent(getActivity(), ChurchDetailActivity.class);
 
-                                Bundle bundleObject = new Bundle();
-                                bundleObject.putString("ChurchImage", infoWindowData.getCimg());
-                                intent.putExtras(bundleObject);
-                                // intent2.putExtra("EventList", selected_Date_events);
-                                startActivity(intent);
+                                    Bundle bundleObject = new Bundle();
+                                    bundleObject.putString("ChurchImage", infoWindowData.getCimg());
+                                    intent.putExtras(bundleObject);
+                                    // intent2.putExtra("EventList", selected_Date_events);
+                                    startActivity(intent);
 
-                                SharedPreferences settings = getActivity().getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE); //1
-                                SharedPreferences.Editor editor = settings.edit();
-                                editor.putString("church_id", infoWindowData.getCid());
-                                editor.putString(AppConstant.LATITUDE, infoWindowData.getLatitude());
-                                editor.putString(AppConstant.LONGITUDE, infoWindowData.getLongitude());
-                                editor.putString(AppConstant.KEY_NAME, infoWindowData.getCname());
-                                editor.putString("ChurchImage", infoWindowData.getCimg());
+                                    SharedPreferences settings = getActivity().getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE); //1
+                                    SharedPreferences.Editor editor = settings.edit();
+                                    editor.putString("church_id", infoWindowData.getCid());
+                                    editor.putString(AppConstant.LATITUDE, infoWindowData.getLatitude());
+                                    editor.putString(AppConstant.LONGITUDE, infoWindowData.getLongitude());
+                                    editor.putString(AppConstant.KEY_NAME, infoWindowData.getCname());
+                                    editor.putString("ChurchImage", infoWindowData.getCimg());
 
-                                Gson gson = new Gson();
-                                String json = gson.toJson(infoWindowData);
-                                editor.putString("MyObject", json);
+                                    Gson gson = new Gson();
+                                    String json = gson.toJson(infoWindowData);
+                                    editor.putString("MyObject", json);
 
 
-                                editor.commit();
-                            }
-                        });
+                                    editor.commit();
+                                }
+                            });
 
                        /* int imageId = getResources().getIdentifier(infoWindowData.getCimg().toLowerCase(),
                                 "drawable", getActivity().getPackageName());
                         iv_church.setImageResource(imageId);*/
-                        try {
-                            Glide.with(getActivity())
-                                    .load(infoWindowData.getCimg())
-                                    .centerCrop()
-                                    .crossFade()
-                                    .listener(new RequestListener<String, GlideDrawable>() {
-                                        public boolean onException(Exception e, String model, Target<GlideDrawable> target, boolean isFirstResource) {
-                                            return false;
-                                        }
+                            try {
+                                Glide.with(getActivity())
+                                        .load(infoWindowData.getCimg())
+                                        .centerCrop()
+                                        .crossFade()
+                                        .listener(new RequestListener<String, GlideDrawable>() {
+                                            public boolean onException(Exception e, String model, Target<GlideDrawable> target, boolean isFirstResource) {
+                                                return false;
+                                            }
 
-                                        public boolean onResourceReady(GlideDrawable resource, String model, Target<GlideDrawable> target, boolean isFromMemoryCache, boolean isFirstResource) {
-                                            return false;
-                                        }
-                                    })
-                                    .into(iv_church);
-                        } catch (Exception e) {
-                            Log.e("Exception", e.getMessage());
+                                            public boolean onResourceReady(GlideDrawable resource, String model, Target<GlideDrawable> target, boolean isFromMemoryCache, boolean isFirstResource) {
+                                                return false;
+                                            }
+                                        })
+                                        .into(iv_church);
+                            } catch (Exception e) {
+                                Log.e("Exception", e.getMessage());
+                            }
+                            tv_churchname.setText(infoWindowData.getCname());
+                            tv_address.setText(infoWindowData.getAddress() + " " + infoWindowData.getCity() + " " + infoWindowData.getState() + " " + infoWindowData.getCountry() + " " + infoWindowData.getZipcode());
+
+
                         }
-                        tv_churchname.setText(infoWindowData.getCname());
-                        tv_address.setText(infoWindowData.getAddress() + " " + infoWindowData.getCity() + " " + infoWindowData.getState() + " " + infoWindowData.getCountry() + " " + infoWindowData.getZipcode());
+                        catch (ArrayIndexOutOfBoundsException e)
+                        {
+                            Log.e("Exception", e.getMessage());
+
+                        }
+
 
 
                         return view;

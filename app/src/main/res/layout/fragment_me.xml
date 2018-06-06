@@ -37,7 +37,7 @@
                     android:layout_height="60dp"
                     android:layout_alignBottom="@+id/iv_view_profile_detail"
                     android:layout_alignParentStart="true"
-                    android:layout_marginStart="130dp"
+                    android:layout_marginStart="110dp"
                     android:background="@null"
                     android:elevation="5dp"
                     android:padding="10dp"
@@ -91,7 +91,7 @@
                     android:enabled="false"
                     android:inputType="text"
                     android:paddingTop="@dimen/dimens_5dp"
-                    android:textAlignment="textEnd"
+                    android:textAlignment="textStart"
                     android:textColor="@color/grey"
                     android:textSize="@dimen/text_size_16sp" />
             </LinearLayout>
@@ -120,7 +120,7 @@
                     android:enabled="false"
                     android:inputType="textEmailAddress"
                     android:paddingTop="@dimen/dimens_5dp"
-                    android:textAlignment="textEnd"
+                    android:textAlignment="textStart"
                     android:textColor="@color/grey"
                     android:textSize="@dimen/text_size_16sp" />
             </LinearLayout>
@@ -150,7 +150,7 @@
                     android:enabled="false"
                     android:inputType="number"
                     android:paddingTop="@dimen/dimens_5dp"
-                    android:textAlignment="textEnd"
+                    android:textAlignment="textStart"
                     android:textColor="@color/grey"
                     android:textSize="@dimen/text_size_16sp" />
             </LinearLayout>

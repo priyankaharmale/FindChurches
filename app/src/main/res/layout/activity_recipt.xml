@@ -75,7 +75,9 @@
                     android:layout_marginLeft="@dimen/dimens_5dp"
                     android:layout_marginTop="@dimen/dimens_5dp"
                     android:text="@string/txt_history"
-                    android:textSize="@dimen/text_size_16dp" />
+                    android:id="@+id/tv_history"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/text_size_14dp" />
             </RelativeLayout>
 
             <View
