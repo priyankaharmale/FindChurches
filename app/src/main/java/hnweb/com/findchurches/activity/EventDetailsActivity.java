@@ -107,7 +107,7 @@ public class EventDetailsActivity extends AppCompatActivity {
                                                     str_eventName=jsonObjectpostion.getString("event_name");
                                                     str_eventDesc=jsonObjectpostion.getString("event_desc");
                                                     str_eventDate=jsonObjectpostion.getString("event_dt");
-                                                    str_Image=jsonObjectpostion.getString("cimg");
+                                                    str_Image=jsonObjectpostion.getString("event_img");
 
                                                     tv_churchname.setText(str_churchName);
                                                     tv_eventname.setText(str_eventName);

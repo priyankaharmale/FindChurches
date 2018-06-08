@@ -5,6 +5,8 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Paint;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
@@ -48,7 +50,8 @@ public class ProfileFragment extends Fragment {
     LoadingDialog loadingDialog;
     ArrayList<ChurchModelClass> churchModelClasses = new ArrayList<ChurchModelClass>();
     ImageView iv_fav;
-    TextView tv_churchname, tv_place, tv_address, tv_phone;
+    String website;
+    TextView tv_churchname, tv_place, tv_address, tv_phone, tv_website, tv_description;
     String isClickFav = "1";
 
 
@@ -68,6 +71,11 @@ public class ProfileFragment extends Fragment {
         tv_address = (TextView) rootView.findViewById(R.id.tv_address);
         tv_phone = (TextView) rootView.findViewById(R.id.tv_phone);
         iv_fav = (ImageView) rootView.findViewById(R.id.iv_fav);
+        tv_website = (TextView) rootView.findViewById(R.id.tv_website);
+        tv_description = (TextView) rootView.findViewById(R.id.tv_description);
+
+        tv_website.setPaintFlags(tv_website.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
+
         getProfileData();
 
         iv_fav.setOnClickListener(new View.OnClickListener() {
@@ -84,6 +92,13 @@ public class ProfileFragment extends Fragment {
                 }
             }
         });
+        tv_website.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_VIEW).setData(Uri.parse(website));
+                startActivity(intent);
+            }
+        });
         return rootView;
 
     }
@@ -92,7 +107,7 @@ public class ProfileFragment extends Fragment {
         loadingDialog.show();
         StringRequest stringRequest = new StringRequest(Request.Method.POST, AppConstant.API_CHURCH_DETAILS,
                 new Response.Listener<String>() {
-            @Override
+                    @Override
                     public void onResponse(String response) {
                         final JSONObject j;
                         System.out.println("res_register" + response);
@@ -122,24 +137,28 @@ public class ProfileFragment extends Fragment {
                                         churchModelClass.setContact_no(jsonObjectpostion.getString("contact_no"));
                                         churchModelClass.setFav_status(jsonObjectpostion.getString("fav_status"));
                                         String str_favStatus = jsonObjectpostion.getString("fav_status");
+                                        website = jsonObjectpostion.getString("website");
+
                                         if (str_favStatus.equals("Y")) {
                                             iv_fav.setImageResource(R.drawable.heart_red);
                                             isClickFav = "0";
-                                            } else {
+                                        } else {
                                             iv_fav.setImageResource(R.drawable.header_heart_blue);
                                             isClickFav = "1";
                                         }
+                                        tv_website.setText(website);
+                                        tv_description.setText(jsonObjectpostion.getString("about"));
                                         tv_churchname.setText(churchModelClass.getCname());
                                         tv_address.setText(churchModelClass.getAddress() + " " + churchModelClass.getCity() + " " + churchModelClass.getState() + " " + churchModelClass.getCountry() + " " + churchModelClass.getZipcode());
                                         tv_phone.setText(churchModelClass.getContact_no());
                                     } catch (JSONException e) {
                                         System.out.println("jsonexeption" + e.toString());
                                     }
-                                    } catch (JSONException e) {
+                                } catch (JSONException e) {
                                     System.out.println("jsonexeption" + e.toString());
                                 }
 
-                                } else {
+                            } else {
                                 message = j.getString("message");
                                 AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
                                 builder.setMessage(message)
